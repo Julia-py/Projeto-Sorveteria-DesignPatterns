@@ -1,6 +1,4 @@
-package gelatomix.model.decorator;
-
-import gelatomix.model.interfaces.Base;
+package gelatomix.model.factory;
 
 public class Picole  {
 

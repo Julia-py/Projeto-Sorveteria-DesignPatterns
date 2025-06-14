@@ -1,5 +1,5 @@
-package gelatomix.model.decorator;
-
+package gelatomix.model.factory;
+/*ja esta com o padrao decorator*/
 public class Massa {
     public String getDescricao() {
         return "Sorvete de Massa";

@@ -1,4 +1,16 @@
 package gelatomix.model.state;
+import gelatomix.model.interfaces.EstadoPedido;
+import gelatomix.model.Pedido;
 
-public class PedidoEntregue {
+public class PedidoEntregue implements EstadoPedido {
+
+    @Override
+    public void proximoEstado(Pedido pedido) {
+        System.out.println("Pedido já foi entregue.");
+    }
+
+    @Override
+    public String getNomeEstado() {
+        return "Pedido Entregue";
+    }
 }
