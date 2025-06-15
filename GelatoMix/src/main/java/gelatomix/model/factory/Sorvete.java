@@ -1,10 +1,13 @@
 package gelatomix.model.factory;
+
+import gelatomix.model.decorator.Base;
+
 /*ja esta com o padrao decorator*/
-public class Massa {
+public class Sorvete implements Base {
     public String getDescricao() {
-        return "Sorvete de Massa";
+        return  "Sorvete ";
     }
     public double getPreco() {
-        return 5.00;
+        return 2.00;
     }
 }

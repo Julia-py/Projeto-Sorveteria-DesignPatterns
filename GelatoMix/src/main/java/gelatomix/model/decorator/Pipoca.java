@@ -1,11 +1,11 @@
 package gelatomix.model.decorator;
 
-public class Pacoca extends AdicionaDecoracao {
-    public Pacoca (Base base) {
+public class Pipoca extends AdicionaDecoracao {
+    public Pipoca (Base base) {
         super(base);
     }
     public String getDescricao() {
-        return base.getDescricao() + ", Paçoca ";
+        return base.getDescricao() + ", Pipoca Gourmet Tritrurada ";
     }
 
     @Override

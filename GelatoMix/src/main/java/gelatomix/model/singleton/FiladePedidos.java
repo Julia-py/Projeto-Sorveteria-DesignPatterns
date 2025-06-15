@@ -21,9 +21,6 @@ public class FiladePedidos {
         fila.add(pedido);
         System.out.println("Pedido adicionado: " + pedido.getDescricao());
     }
-    public boolean isVazio () {
-       return fila.isEmpty();
-    }
 
     public int tamanhoFila () {
         return fila.size();
@@ -31,6 +28,21 @@ public class FiladePedidos {
     }
 
     public Pedido proximoPedido (){
+       if (!fila.isEmpty()){
         return fila.poll();
+       } else {
+           System.out.println("Fila de pedidos está vazia");
+           return null;
+       }
+    }
+
+    public void listarPedidos() {
+        if (fila.isEmpty()) {
+            System.out.println("Nenhum pedido na fila.");
+        } else {
+            System.out.println("Pedidos na fila:");
+            for (Pedido p : fila) {
+                System.out.println("  " + p.getDescricao());}
+        }
     }
 }

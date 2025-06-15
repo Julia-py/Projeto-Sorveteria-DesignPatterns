@@ -1,4 +1,4 @@
-package gelatomix.model.interfaces;
+package gelatomix.model.decorator;
 /*faz parte de padrão decorator */
 
 public abstract class AdicionaDecoracao implements Base {

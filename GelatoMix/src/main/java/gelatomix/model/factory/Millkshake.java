@@ -1,6 +1,8 @@
 package gelatomix.model.factory;
 
-public class Millkshake {
+import gelatomix.model.decorator.Base;
+
+public class Millkshake implements Base {
 
     public String getDescricao() {
         return "Millkshake";

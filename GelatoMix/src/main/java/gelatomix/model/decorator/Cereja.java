@@ -1,11 +1,11 @@
 package gelatomix.model.decorator;
 
-public class CaldaDoceDeLeite extends AdicionaDecoracao {
-    public CaldaDoceDeLeite (Base base) {
+public class Cereja extends AdicionaDecoracao {
+    public Cereja (Base base) {
         super(base);
     }
     public String getDescricao() {
-        return base.getDescricao() + ", Calda de Doce de Leite ";
+        return base.getDescricao() + ", Cereja ";
     }
 
     @Override

@@ -1,6 +1,8 @@
 package gelatomix.model.factory;
 
-public class Picole  {
+import gelatomix.model.decorator.Base;
+
+public class Picole implements Base {
 
 
     public String getDescricao(){

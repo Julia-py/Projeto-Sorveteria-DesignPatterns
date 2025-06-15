@@ -1,11 +1,11 @@
 package gelatomix.model.decorator;
 
-public class Cookie extends AdicionaDecoracao {
-    public Cookie (Base base) {
+public class Oreo extends AdicionaDecoracao {
+    public Oreo(Base base) {
         super(base);
     }
     public String getDescricao() {
-        return base.getDescricao() + ", Cookie ";
+        return base.getDescricao() + ", Oreo Triturado ";
     }
 
     @Override
