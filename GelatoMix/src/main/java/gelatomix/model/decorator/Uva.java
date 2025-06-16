@@ -1,5 +1,7 @@
 package gelatomix.model.decorator;
 
+import gelatomix.model.interfaces.Base;
+
 public class Uva extends AdicionaDecoracao {
     public Uva (Base base) {
         super(base);

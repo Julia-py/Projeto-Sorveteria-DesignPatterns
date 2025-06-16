@@ -1,5 +1,5 @@
 package gelatomix.model;
-import gelatomix.model.decorator.Base;
+import gelatomix.model.interfaces.Base;
 import gelatomix.model.interfaces.EstadoPedido;
 import gelatomix.model.state.PedidoRecebido;
 

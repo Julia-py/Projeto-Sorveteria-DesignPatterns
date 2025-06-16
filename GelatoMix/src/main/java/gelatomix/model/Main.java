@@ -3,7 +3,12 @@ import gelatomix.model.decorator.*;
 import gelatomix.model.factory.Millkshake;
 import gelatomix.model.factory.Picole;
 import gelatomix.model.factory.Sorvete;
+import gelatomix.model.interfaces.Base;
 import gelatomix.model.singleton.FiladePedidos;
+import gelatomix.model.state.PedidoEntregue;
+import gelatomix.model.state.PedidoPreparando;
+import gelatomix.model.state.PedidoPronto;
+import gelatomix.model.state.PedidoRecebido;
 
 public class Main {
     public static void main(String[] args) {
@@ -38,23 +43,28 @@ public class Main {
         System.out.println("\n--- Pedidos na fila ---");
         fila.listarPedidos();
 
-        //Processamento o proximo pedido
-        Pedido pedido = fila.proximoPedido();
-        if (pedido != null) {
-            System.out.println("\nProximo Pedido: " + pedido.getDescricao());
-            System.out.println("Restam:  " + fila.tamanhoFila() + " na fila.");
+        while (fila.tamanhoFila() > 0) {
+            //Processamento o proximo pedido
+            Pedido pedido = fila.proximoPedido();
+            if (pedido != null) {
+                System.out.println("\nProximo Pedido: " + pedido.getDescricao());
+                System.out.println("Restam:  " + fila.tamanhoFila() + " na fila.");
 
 
-            //state
-            System.out.println(pedido.getEstado()); // Recebido
-            pedido.proximoEstado();
-            System.out.println(pedido.getEstado()); // Preparando
-            pedido.proximoEstado();
-            System.out.println(pedido.getEstado()); // Pronto
-            pedido.proximoEstado();
-            System.out.println(pedido.getEstado()); // Entregue
+
+                //state
+                System.out.println(pedido.getEstado()); // Recebido
+                pedido.proximoEstado();
+                System.out.println(pedido.getEstado()); // Preparando
+                pedido.proximoEstado();
+                System.out.println(pedido.getEstado()); // Pronto
+                pedido.proximoEstado();
+                System.out.println(pedido.getEstado()); // Entregue
+            }
+
+            System.out.println("\n--- Pedidos restantes na fila ---");
+            fila.listarPedidos();
         }
-        System.out.println("\n--- Pedidos restantes na fila ---");
-        fila.listarPedidos();
+         System.out.println("\nTodos os pedidos foram processados. Fila vazia!");
     }
 }

@@ -1,6 +1,6 @@
 package gelatomix.model.factory;
 
-import gelatomix.model.decorator.Base;
+import gelatomix.model.interfaces.Base;
 
 /*ja esta com o padrao decorator*/
 public class Sorvete implements Base {

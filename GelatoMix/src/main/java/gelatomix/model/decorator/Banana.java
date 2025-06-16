@@ -1,5 +1,7 @@
 package gelatomix.model.decorator;
 
+import gelatomix.model.interfaces.Base;
+
 public class Banana extends AdicionaDecoracao {
     public Banana (Base base) {
         super(base);

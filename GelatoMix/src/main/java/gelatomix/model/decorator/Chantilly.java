@@ -1,5 +1,7 @@
 package gelatomix.model.decorator;
 
+import gelatomix.model.interfaces.Base;
+
 public class Chantilly extends AdicionaDecoracao {
     public Chantilly (Base base) {
         super(base);
@@ -10,6 +12,6 @@ public class Chantilly extends AdicionaDecoracao {
 
     @Override
     public double getPreco() {
-        return base.getPreco() + 2.00;
+        return base.getPreco() + 4.00;
     }
 }

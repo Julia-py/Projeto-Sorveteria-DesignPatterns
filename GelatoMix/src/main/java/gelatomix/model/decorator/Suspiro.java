@@ -2,16 +2,16 @@ package gelatomix.model.decorator;
 
 import gelatomix.model.interfaces.Base;
 
-public class LeiteNinho extends AdicionaDecoracao {
-    public LeiteNinho(Base base) {
+public class Suspiro extends AdicionaDecoracao {
+    public Suspiro (Base base) {
         super(base);
     }
     public String getDescricao() {
-        return base.getDescricao() + ", Creme de Leite Ninho ";
+        return base.getDescricao() + ", Suspiros Artesanais ";
     }
 
     @Override
     public double getPreco() {
-        return base.getPreco() + 4.00;
+        return base.getPreco() + 9.00;
     }
 }

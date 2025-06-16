@@ -1,4 +1,4 @@
-package gelatomix.model.decorator;
+package gelatomix.model.interfaces;
 
 public interface Base {
     String getDescricao();

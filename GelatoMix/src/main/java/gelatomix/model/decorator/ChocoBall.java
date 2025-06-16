@@ -1,5 +1,7 @@
 package gelatomix.model.decorator;
 
+import gelatomix.model.interfaces.Base;
+
 public class ChocoBall extends AdicionaDecoracao {
     public ChocoBall (Base base) {
         super(base);

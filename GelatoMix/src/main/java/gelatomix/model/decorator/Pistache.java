@@ -1,5 +1,7 @@
 package gelatomix.model.decorator;
 
+import gelatomix.model.interfaces.Base;
+
 public class Pistache extends AdicionaDecoracao{
     public Pistache (Base base) {
         super(base);

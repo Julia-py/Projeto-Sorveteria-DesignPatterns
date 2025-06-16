@@ -1,5 +1,7 @@
 package gelatomix.model.decorator;
 
+import gelatomix.model.interfaces.Base;
+
 public class CaldaMorango extends AdicionaDecoracao {
     public CaldaMorango (Base base) {
         super(base);
@@ -10,6 +12,6 @@ public class CaldaMorango extends AdicionaDecoracao {
 
     @Override
     public double getPreco() {
-        return base.getPreco() + 2.50;
+        return base.getPreco() + 2.00;
     }
 }
