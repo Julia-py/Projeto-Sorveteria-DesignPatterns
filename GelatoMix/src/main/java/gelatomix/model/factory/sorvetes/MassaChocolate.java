@@ -1,6 +1,6 @@
-package model.factory.sorvetes;
+package gelatomix.model.factory.sorvetes;
 
-import model.interfaces.Sorvetes;
+import gelatomix.model.interfaces.Sorvetes;
 
 public class MassaChocolate implements Sorvetes {
 

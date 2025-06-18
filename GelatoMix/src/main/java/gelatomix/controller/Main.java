@@ -1,10 +1,10 @@
-package controller;
+package gelatomix.controller;
 
-import model.factory.FactoryBuilder;
-import model.factory.FactoryMassaChocolate;
-import model.factory.FactoryMilkshakeMenta;
-import model.factory.FactoryPicoleChocolate;
-import model.interfaces.Sorvetes;
+import gelatomix.model.factory.FactoryBuilder;
+import gelatomix.model.factory.FactoryMassaChocolate;
+import gelatomix.model.factory.FactoryMilkshakeMenta;
+import gelatomix.model.factory.FactoryPicoleChocolate;
+import gelatomix.model.interfaces.Sorvetes;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,13 +1,13 @@
-package model.factory;
+package gelatomix.model.factory;
 
-import model.factory.sorvetes.MilkshakeChocolate;
-import model.interfaces.ISorveteFactory;
-import model.interfaces.Sorvetes;
+import gelatomix.model.factory.sorvetes.MassaChocolate;
+import gelatomix.model.interfaces.ISorveteFactory;
+import gelatomix.model.interfaces.Sorvetes;
 
 public class FactoryMassaChocolate implements ISorveteFactory {
 
     @Override
     public Sorvetes criarSorvete() {
-        return new MilkshakeChocolate();
+        return new MassaChocolate();
     }
 }

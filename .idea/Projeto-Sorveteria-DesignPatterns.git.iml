@@ -3,7 +3,8 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/GelatoMix/src/main/java/gelatomix/model/Factory" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GelatoMix/src/main/java/gelatomix/model/Interfaces" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GelatoMix/src/main/java/gelatomix/model/factory" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

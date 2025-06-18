@@ -1,4 +1,4 @@
-package model.interfaces;
+package gelatomix.model.interfaces;
 
 public interface Sorvetes {
     void exibirInformacoes();

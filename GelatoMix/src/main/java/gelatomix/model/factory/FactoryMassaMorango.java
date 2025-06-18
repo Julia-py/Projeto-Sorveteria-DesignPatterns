@@ -1,8 +1,8 @@
-package model.factory;
+package gelatomix.model.factory;
 
-import model.factory.sorvetes.MassaMorango;
-import model.interfaces.ISorveteFactory;
-import model.interfaces.Sorvetes;
+import gelatomix.model.factory.sorvetes.MassaMorango;
+import gelatomix.model.interfaces.ISorveteFactory;
+import gelatomix.model.interfaces.Sorvetes;
 
 public class FactoryMassaMorango implements ISorveteFactory {
 
