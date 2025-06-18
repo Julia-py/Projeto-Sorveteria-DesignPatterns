@@ -1,20 +1,16 @@
 package gelatomix.controller;
 
-import gelatomix.model.factory.FactoryBuilder;
-import gelatomix.model.factory.FactoryMassaChocolate;
-import gelatomix.model.factory.FactoryMilkshakeMenta;
-import gelatomix.model.factory.FactoryPicoleChocolate;
-import gelatomix.model.interfaces.Sorvetes;
+import gelatomix.model.facade.GelatomixFacade;
+import gelatomix.model.factory.FactoryMilkshakeChocolate;
 
 public class Main {
     public static void main(String[] args) {
-        Sorvetes milkShake = FactoryBuilder.criarSorvete(new FactoryMilkshakeMenta());
-        milkShake.exibirInformacoes();
+        /**Sorvetes milkShake = FactoryBuilder.criarSorvete(new FactoryMilkshakeMenta());
+        System.out.println(milkShake.getDescricao());
+        System.out.println(milkShake.getPreco());*/
 
-        Sorvetes picole = FactoryBuilder.criarSorvete(new FactoryPicoleChocolate());
-        picole.exibirInformacoes();
+        GelatomixFacade facade = new GelatomixFacade();
 
-        Sorvetes sorveteChocolate = FactoryBuilder.criarSorvete(new FactoryMassaChocolate());
-        sorveteChocolate.exibirInformacoes();
+        facade.fazerPedido(new FactoryMilkshakeChocolate());
     }
 }

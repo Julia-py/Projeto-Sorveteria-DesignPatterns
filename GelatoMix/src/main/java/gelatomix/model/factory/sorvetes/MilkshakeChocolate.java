@@ -4,8 +4,11 @@ import gelatomix.model.interfaces.Sorvetes;
 
 public class MilkshakeChocolate implements Sorvetes {
 
-    @Override
-    public void exibirInformacoes() {
-        System.out.println("Milkshake sabor Chocolate");
+    public String getDescricao() {
+        return "Milkshake sabor Chocolate";
+    }
+
+    public double getPreco() {
+        return 10.00;
     }
 }

@@ -3,8 +3,12 @@ package gelatomix.model.factory.sorvetes;
 import gelatomix.model.interfaces.Sorvetes;
 
 public class PicoleChocolate implements Sorvetes {
-    @Override
-    public void exibirInformacoes() {
-        System.out.println("Picole de Chocolate");
+
+    public String getDescricao() {
+        return "Picole de Chocolate";
+    }
+
+    public double getPreco() {
+        return 2.00;
     }
 }

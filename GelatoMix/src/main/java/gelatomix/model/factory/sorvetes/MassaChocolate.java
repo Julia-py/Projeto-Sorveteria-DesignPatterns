@@ -4,8 +4,11 @@ import gelatomix.model.interfaces.Sorvetes;
 
 public class MassaChocolate implements Sorvetes {
 
-    @Override
-    public void exibirInformacoes() {
-        System.out.println("Bola de Sorvete de Chocolate");
+    public String getDescricao() {
+        return "Bola de Sorvete de Chocolate";
+    }
+
+    public double getPreco() {
+        return 2.00;
     }
 }
