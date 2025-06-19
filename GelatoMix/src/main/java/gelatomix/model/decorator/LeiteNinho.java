@@ -3,15 +3,16 @@ package gelatomix.model.decorator;
 import gelatomix.model.interfaces.Sorvetes;
 
 public class LeiteNinho extends AdicionaDecoracao {
-    public LeiteNinho(Sorvetes base) {
-        super(base);
+    public LeiteNinho(Sorvetes sorvete) {
+        super(sorvete);
     }
+
     public String getDescricao() {
-        return base.getDescricao() + ", Creme de Leite Ninho ";
+        return sorvete.getDescricao() + ", Creme de Leite Ninho ";
     }
 
     @Override
     public double getPreco() {
-        return base.getPreco() + 4.00;
+        return sorvete.getPreco() + 4.00;
     }
 }

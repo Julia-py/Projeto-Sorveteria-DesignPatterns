@@ -3,16 +3,17 @@ package gelatomix.model.decorator;
 import gelatomix.model.interfaces.Sorvetes;
 
 public class CaldaChocolateBranco extends AdicionaDecoracao {
-    public CaldaChocolateBranco (Sorvetes base) {
-        super(base);
+    public CaldaChocolateBranco (Sorvetes sorvete) {
+        super(sorvete);
     }
+
     public String getDescricao() {
-        return base.getDescricao() + ", Calda de Chocolate Branco ";
+        return sorvete.getDescricao() + ", Calda de Chocolate Branco ";
     }
 
     @Override
     public double getPreco() {
-        return base.getPreco() + 2.00;
+        return sorvete.getPreco() + 2.00;
     }
 
 }

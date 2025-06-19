@@ -3,15 +3,16 @@ package gelatomix.model.decorator;
 import gelatomix.model.interfaces.Sorvetes;
 
 public class Morango extends AdicionaDecoracao {
-    public Morango (Sorvetes base) {
-        super(base);
+    public Morango (Sorvetes sorvete) {
+        super(sorvete);
     }
+
     public String getDescricao() {
-        return base.getDescricao() + ", Morango ";
+        return sorvete.getDescricao() + ", Morango ";
     }
 
     @Override
     public double getPreco() {
-        return base.getPreco() + 3.00;
+        return sorvete.getPreco() + 3.00;
     }
 }

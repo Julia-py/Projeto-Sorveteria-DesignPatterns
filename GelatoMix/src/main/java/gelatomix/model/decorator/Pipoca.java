@@ -3,15 +3,16 @@ package gelatomix.model.decorator;
 import gelatomix.model.interfaces.Sorvetes;
 
 public class Pipoca extends AdicionaDecoracao {
-    public Pipoca (Sorvetes base) {
-        super(base);
+    public Pipoca (Sorvetes sorvete) {
+        super(sorvete);
     }
+
     public String getDescricao() {
-        return base.getDescricao() + ", Pipoca Gourmet Tritrurada ";
+        return sorvete.getDescricao() + ", Pipoca Gourmet Tritrurada ";
     }
 
     @Override
     public double getPreco() {
-        return base.getPreco() + 5.00;
+        return sorvete.getPreco() + 5.00;
     }
 }

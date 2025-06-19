@@ -3,15 +3,16 @@ package gelatomix.model.decorator;
 import gelatomix.model.interfaces.Sorvetes;
 
 public class Suspiro extends AdicionaDecoracao {
-    public Suspiro (Sorvetes base) {
-        super(base);
+    public Suspiro (Sorvetes sorvete) {
+        super(sorvete);
     }
+
     public String getDescricao() {
-        return base.getDescricao() + ", Suspiros Artesanais ";
+        return sorvete.getDescricao() + ", Suspiros Artesanais ";
     }
 
     @Override
     public double getPreco() {
-        return base.getPreco() + 9.00;
+        return sorvete.getPreco() + 9.00;
     }
 }

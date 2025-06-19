@@ -3,15 +3,16 @@ package gelatomix.model.decorator;
 import gelatomix.model.interfaces.Sorvetes;
 
 public class Pistache extends AdicionaDecoracao{
-    public Pistache (Sorvetes base) {
-        super(base);
+    public Pistache (Sorvetes sorvete) {
+        super(sorvete);
     }
+
     public String getDescricao() {
-        return base.getDescricao() + ", creme de Pistache de Dubai ";
+        return sorvete.getDescricao() + ", creme de Pistache de Dubai ";
     }
 
     @Override
     public double getPreco() {
-        return base.getPreco() + 15.00;
+        return sorvete.getPreco() + 15.00;
     }
 }

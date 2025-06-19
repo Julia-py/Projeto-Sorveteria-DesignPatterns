@@ -3,15 +3,17 @@ package gelatomix.model.decorator;
 import gelatomix.model.interfaces.Sorvetes;
 
 public class Brownie extends AdicionaDecoracao {
-    public Brownie (Sorvetes base) {
-        super(base);
+    public Brownie (Sorvetes sorvete) {
+        super(sorvete);
     }
+
     public String getDescricao() {
-        return base.getDescricao() + ", Pedaços de Brownie ";
+        return sorvete.getDescricao() + ", Pedaços de Brownie ";
     }
 
     @Override
     public double getPreco() {
-        return base.getPreco() + 6.00;
+        return sorvete.getPreco() + 6.00;
     }
 }
+

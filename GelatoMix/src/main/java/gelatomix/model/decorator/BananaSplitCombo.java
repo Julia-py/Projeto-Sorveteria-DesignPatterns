@@ -3,16 +3,17 @@ package gelatomix.model.decorator;
 import gelatomix.model.interfaces.Sorvetes;
 
 public class BananaSplitCombo extends AdicionaDecoracao {
-    public BananaSplitCombo(Sorvetes base) {
-        super(new Chantilly(new CaldaChocolate(new Banana(base))));
+    public BananaSplitCombo(Sorvetes sorvete) {
+        super(new Chantilly(new CaldaChocolate(new Banana(sorvete))));
     }
     @Override
     public String getDescricao(){
-        return base.getDescricao() + ", Banana Split Combo";
+        return sorvete.getDescricao() + ", Banana Split Combo";
     }
+
 
     @Override
     public  double getPreco() {
-       return base.getPreco() + 16.00;
+       return sorvete.getPreco() + 16.00;
     }
 }

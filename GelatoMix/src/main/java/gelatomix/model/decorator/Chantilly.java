@@ -6,12 +6,13 @@ public class Chantilly extends AdicionaDecoracao {
     public Chantilly (Sorvetes base) {
         super(base);
     }
+    
     public String getDescricao() {
-        return base.getDescricao() + ", Chantilly ";
+        return sorvete.getDescricao() + ", Chantilly ";
     }
 
     @Override
     public double getPreco() {
-        return base.getPreco() + 4.00;
+        return sorvete.getPreco() + 4.00;
     }
 }

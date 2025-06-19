@@ -4,17 +4,17 @@ package gelatomix.model.decorator;
 import gelatomix.model.interfaces.Sorvetes;
 
 public abstract class AdicionaDecoracao implements Sorvetes {
-    protected Sorvetes base;
-    public AdicionaDecoracao( Sorvetes base) {
-        this.base = base;
+    protected Sorvetes sorvete;
+    public AdicionaDecoracao( Sorvetes sorvete) {
+        this.sorvete = sorvete;
     }
 
     public String getDescricao() {
-        return base.getDescricao();
+        return sorvete.getDescricao();
     }
 
     @Override
     public double getPreco() {
-        return base.getPreco();
+        return sorvete.getPreco();
     }
 }
