@@ -7,7 +7,7 @@ public class CaldaChocolateBranco extends AdicionaDecoracao {
         super(base);
     }
     public String getDescricao() {
-        return base.getDescricao() + ", Calda de Chocolate Branco ";
+        return base.getDescricao() + " com Calda de Chocolate Branco ";
     }
 
     @Override

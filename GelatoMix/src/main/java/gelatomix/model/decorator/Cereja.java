@@ -7,7 +7,7 @@ public class Cereja extends AdicionaDecoracao {
         super(base);
     }
     public String getDescricao() {
-        return base.getDescricao() + ", Cereja ";
+        return base.getDescricao() + " com Cereja ";
     }
 
     @Override

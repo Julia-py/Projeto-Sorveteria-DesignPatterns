@@ -7,7 +7,7 @@ public class Morango extends AdicionaDecoracao {
         super(base);
     }
     public String getDescricao() {
-        return base.getDescricao() + ", Morango ";
+        return base.getDescricao() + " com Morango ";
     }
 
     @Override

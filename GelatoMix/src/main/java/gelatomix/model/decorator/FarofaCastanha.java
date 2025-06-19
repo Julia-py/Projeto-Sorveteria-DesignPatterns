@@ -7,7 +7,7 @@ public class FarofaCastanha extends AdicionaDecoracao {
         super(base);
     }
     public String getDescricao() {
-        return base.getDescricao() + ", Farofa Crocante de Castanha ";
+        return base.getDescricao() + " com Farofa Crocante de Castanha ";
     }
 
     @Override

@@ -7,7 +7,7 @@ public class CaldaCaramelo extends AdicionaDecoracao {
             super(base);
         }
         public String getDescricao() {
-            return base.getDescricao() + ", Calda de Caramelo ";
+            return base.getDescricao() + " com Calda de Caramelo ";
         }
 
         @Override

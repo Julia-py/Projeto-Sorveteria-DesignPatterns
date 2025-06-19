@@ -7,7 +7,7 @@ public class Cookie extends AdicionaDecoracao {
         super(base);
     }
     public String getDescricao() {
-        return base.getDescricao() + ", Cookie ";
+        return base.getDescricao() + " com Cookie ";
     }
 
     @Override

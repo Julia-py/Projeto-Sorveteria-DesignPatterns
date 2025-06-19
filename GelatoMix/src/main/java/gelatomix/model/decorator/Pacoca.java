@@ -7,7 +7,7 @@ public class Pacoca extends AdicionaDecoracao {
         super(base);
     }
     public String getDescricao() {
-        return base.getDescricao() + ", Paçoca ";
+        return base.getDescricao() + " com Paçoca ";
     }
 
     @Override

@@ -7,7 +7,7 @@ public class Chantilly extends AdicionaDecoracao {
         super(base);
     }
     public String getDescricao() {
-        return base.getDescricao() + ", Chantilly ";
+        return base.getDescricao() + " com Chantilly ";
     }
 
     @Override

@@ -7,7 +7,7 @@ public class Brownie extends AdicionaDecoracao {
         super(base);
     }
     public String getDescricao() {
-        return base.getDescricao() + ", Pedaços de Brownie ";
+        return base.getDescricao() + " com Pedaços de Brownie ";
     }
 
     @Override

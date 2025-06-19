@@ -7,7 +7,7 @@ public class Nutella extends AdicionaDecoracao {
         super(base);
     }
     public String getDescricao() {
-        return base.getDescricao() + ", Nutella ";
+        return base.getDescricao() + " com Nutella ";
     }
 
     @Override

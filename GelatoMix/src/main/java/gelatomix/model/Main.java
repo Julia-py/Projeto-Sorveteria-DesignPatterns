@@ -21,20 +21,7 @@ public class Main {
         Sorvetes casquinhaChocolate = new MassaChocolate();
         casquinhaChocolate = new Brownie(casquinhaChocolate);
 
-        /*Sorvetes base1 = new Sorvetes() {
-        };
-        base1 = new CaldaChocolate(base1);
-        base1 = new LeiteNinho(base1);
 
-        Sorvetes base2 = new FactoryMilkshakeChocolate();
-        base2 = new Brownie(base2);
-        base2 = new Nutella(base2);
-        base2 = new Morango(base2);
-
-        Sorvetes base3 = new Picole();
-        base3 = new CaldaCaramelo(base3);
-        base3 = new Pipoca(base3);
-        */
 
         //Pedidos
         Pedido p1 = new Pedido(milkshake);

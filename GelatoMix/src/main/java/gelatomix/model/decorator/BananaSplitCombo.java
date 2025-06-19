@@ -8,7 +8,7 @@ public class BananaSplitCombo extends AdicionaDecoracao {
     }
     @Override
     public String getDescricao(){
-        return base.getDescricao() + ", Banana Split Combo";
+        return base.getDescricao() + " com Banana Split Combo";
     }
 
     @Override

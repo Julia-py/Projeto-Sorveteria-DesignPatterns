@@ -7,7 +7,7 @@ public class CaldaMorango extends AdicionaDecoracao {
         super(base);
     }
     public String getDescricao() {
-        return base.getDescricao() + ", Calda de Morango ";
+        return base.getDescricao() + " com Calda de Morango ";
     }
 
     @Override

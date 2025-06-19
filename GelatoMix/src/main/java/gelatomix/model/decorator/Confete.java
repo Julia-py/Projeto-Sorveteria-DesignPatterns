@@ -7,7 +7,7 @@ public class Confete extends AdicionaDecoracao {
         super(base);
     }
     public String getDescricao() {
-        return base.getDescricao() + ", Confete ";
+        return base.getDescricao() + " com Confete ";
     }
 
     @Override

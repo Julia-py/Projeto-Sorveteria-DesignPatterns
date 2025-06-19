@@ -7,7 +7,7 @@ public class Oreo extends AdicionaDecoracao {
         super(base);
     }
     public String getDescricao() {
-        return base.getDescricao() + ", Oreo Triturado ";
+        return base.getDescricao() + " com Oreo Triturado ";
     }
 
     @Override

@@ -7,7 +7,7 @@ public class Ovomaltine extends AdicionaDecoracao {
         super(base);
     }
     public String getDescricao() {
-        return base.getDescricao() + ", Ovomaltine ";
+        return base.getDescricao() + " com Ovomaltine ";
     }
 
     @Override
