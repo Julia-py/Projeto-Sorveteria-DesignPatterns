@@ -1,26 +1,35 @@
 package gelatomix.model.facade;
 
+import java.util.List;
+
 import gelatomix.model.Pedido;
 import gelatomix.model.factory.FactoryBuilder;
 import gelatomix.model.interfaces.ISorveteFactory;
 import gelatomix.model.interfaces.Sorvetes;
 import gelatomix.model.singleton.FiladePedidos;
+import gelatomix.repository.PedidoRepository;
 
 public class GelatomixFacade {
 
+    private PedidoRepository pedidoRepository = new PedidoRepository();
+
     public Pedido fazerPedido(ISorveteFactory factory) {
+        //pedidoRepository.limparPedidos();
         Sorvetes sorvete = FactoryBuilder.criarSorvete(factory);
 
         Pedido pedido = new Pedido(sorvete);
         FiladePedidos fila = FiladePedidos.getInstancia();
         fila.adicionarPedido(pedido);
-
-        System.out.println("✔ Pedido registrado com sucesso!");
-        System.out.println(pedido.getDescricao());
-        System.out.println("- Estado atual: " + pedido.getEstado());
-        exibirBarraProgresso(pedido.getEstado());
+        
+        pedidoRepository.salvarPedido(pedido);
         
         return pedido;
+    }
+
+    public void mostrarHistorico() {
+        List<String> pedidos = pedidoRepository.listarPedidos();
+        System.out.println("\n📜 Histórico de pedidos:");
+        pedidos.forEach(System.out::println);
     }
 
     public void listarFilaPedidos() {

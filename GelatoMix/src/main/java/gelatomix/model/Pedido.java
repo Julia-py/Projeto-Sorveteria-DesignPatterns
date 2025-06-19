@@ -12,6 +12,10 @@ public class Pedido {
         this.estadoAtual = new PedidoRecebido();
     }
 
+    public Sorvetes getSorvete() {
+        return base;
+    }    
+
     public String getDescricao() {
         return "- Pedido do Cliente: " + base.getDescricao() + " | Preço: R$" + base.getPreco();
     }
