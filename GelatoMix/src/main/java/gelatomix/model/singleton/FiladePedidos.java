@@ -1,7 +1,8 @@
 package gelatomix.model.singleton;
-import gelatomix.model.Pedido;
 import java.util.LinkedList;
 import java.util.Queue;
+
+import gelatomix.model.state.Pedido;
 
 public class FiladePedidos {
     private static FiladePedidos instancia;

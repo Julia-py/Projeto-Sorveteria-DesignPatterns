@@ -2,10 +2,10 @@ package gelatomix.controller;
 
 import java.sql.SQLException;
 
-import gelatomix.model.Pedido;
 import gelatomix.model.facade.GelatomixFacade;
-import gelatomix.model.factory.FactoryMilkshakeChocolate;
-import gelatomix.model.factory.FactoryPicoleChocolate;
+import gelatomix.model.factory.FactoryMassaChocolate;
+import gelatomix.model.factory.FactoryMassaMorango;
+import gelatomix.model.state.Pedido;
 import gelatomix.repository.ConexaoBD;
 
 public class Main {
@@ -13,12 +13,12 @@ public class Main {
 
         GelatomixFacade facade = new GelatomixFacade();
 
-        Pedido pedido1 = facade.fazerPedido(new FactoryMilkshakeChocolate());
+        Pedido pedido1 = facade.fazerPedido(new FactoryMassaMorango());
         facade.statusPedido(pedido1);
         facade.statusPedido(pedido1);
         facade.statusPedido(pedido1);
 
-        Pedido pedido2 = facade.fazerPedido(new FactoryPicoleChocolate());
+        Pedido pedido2 = facade.fazerPedido(new FactoryMassaChocolate());
         facade.statusPedido(pedido2);
 
         facade.mostrarHistorico();

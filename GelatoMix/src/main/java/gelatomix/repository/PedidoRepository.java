@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import gelatomix.model.Pedido;
 import gelatomix.model.interfaces.Sorvetes;
+import gelatomix.model.state.Pedido;
 
 public class PedidoRepository {
 
@@ -30,17 +30,19 @@ public class PedidoRepository {
         }
     }
 
-    public List<String> listarPedidos() {
+    public List<Pedido> listarPedidos() {
         String sql = "SELECT * FROM pedidos ORDER BY data_criacao DESC";
-        List<String> historico = new ArrayList<>();
+        List<Pedido> historico = new ArrayList<>();
 
         try (Connection conn = ConexaoBD.conectar(); PreparedStatement stmt = conn.prepareStatement(sql); ResultSet rs = stmt.executeQuery()) {
 
             while (rs.next()) {
-                String linha = "Pedido: " + rs.getString("descricao") +
-                        " | Preço: R$" + rs.getDouble("preco") +
-                        " | Data: " + rs.getTimestamp("data_criacao");
-                historico.add(linha);
+                String descricao = rs.getString("descricao");
+                double preco = rs.getDouble("preco");
+                String data = rs.getTimestamp("data_criacao").toString();
+
+                Pedido pedido = new Pedido(descricao, preco, data);
+                historico.add(pedido);
             }
         } catch (SQLException e) {
             System.out.println("Erro ao buscar pedidos: " + e.getMessage());

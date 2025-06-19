@@ -2,11 +2,11 @@ package gelatomix.model.facade;
 
 import java.util.List;
 
-import gelatomix.model.Pedido;
 import gelatomix.model.factory.FactoryBuilder;
 import gelatomix.model.interfaces.ISorveteFactory;
 import gelatomix.model.interfaces.Sorvetes;
 import gelatomix.model.singleton.FiladePedidos;
+import gelatomix.model.state.Pedido;
 import gelatomix.repository.PedidoRepository;
 
 public class GelatomixFacade {
@@ -27,9 +27,13 @@ public class GelatomixFacade {
     }
 
     public void mostrarHistorico() {
-        List<String> pedidos = pedidoRepository.listarPedidos();
-        System.out.println("\n📜 Histórico de pedidos:");
-        pedidos.forEach(System.out::println);
+        List<Pedido> pedidos = pedidoRepository.listarPedidos();
+        System.out.println("\n HISTÓRICO DE PEDIDOS:");
+        for (Pedido pedido : pedidos) {
+            System.out.println("Pedido: " + pedido.getDescricaoSimples()
+                             + " | Preço: R$" + pedido.getPrecoSimples()
+                             + " | Data: " + pedido.getDataCriacao());
+        }
     }
 
     public void listarFilaPedidos() {
