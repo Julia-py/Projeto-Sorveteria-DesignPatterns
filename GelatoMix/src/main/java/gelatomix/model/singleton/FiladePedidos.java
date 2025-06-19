@@ -11,12 +11,14 @@ public class FiladePedidos {
     private FiladePedidos () {
         fila = new LinkedList<>();
     }
+
     public static FiladePedidos getInstancia() {
         if (instancia == null){
             instancia = new FiladePedidos ();
         }
         return instancia;
     }
+
     public void adicionarPedido (Pedido pedido) {
         fila.add(pedido);
         System.out.println("Pedido adicionado: " + pedido.getDescricao());
@@ -24,7 +26,6 @@ public class FiladePedidos {
 
     public int tamanhoFila () {
         return fila.size();
-
     }
 
     public Pedido proximoPedido (){

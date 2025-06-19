@@ -11,9 +11,11 @@ public class Pedido {
         this.base = base;
         this.estadoAtual = new PedidoRecebido();
     }
+
     public String getDescricao() {
         return "- Pedido do Cliente: " + base.getDescricao() + " | Preço: R$" + base.getPreco();
     }
+    
     public void proximoEstado() {
         estadoAtual.proximoEstado(this);
     }
