@@ -1,9 +1,9 @@
 package gelatomix.model.decorator;
 
-import gelatomix.model.interfaces.Base;
+import gelatomix.model.interfaces.Sorvetes;
 
 public class Morango extends AdicionaDecoracao {
-    public Morango (Base base) {
+    public Morango (Sorvetes base) {
         super(base);
     }
     public String getDescricao() {

@@ -1,9 +1,9 @@
 package gelatomix.model.decorator;
 
-import gelatomix.model.interfaces.Base;
+import gelatomix.model.interfaces.Sorvetes;
 
 public class LeiteNinho extends AdicionaDecoracao {
-    public LeiteNinho(Base base) {
+    public LeiteNinho(Sorvetes base) {
         super(base);
     }
     public String getDescricao() {

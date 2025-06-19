@@ -1,13 +1,13 @@
 package gelatomix.model;
-import gelatomix.model.interfaces.Base;
+import gelatomix.model.interfaces.Sorvetes;
 import gelatomix.model.interfaces.EstadoPedido;
 import gelatomix.model.state.PedidoRecebido;
 
 public class Pedido {
-    private Base base;
+    private Sorvetes base;
     private EstadoPedido estadoAtual;
 
-    public Pedido(Base base){
+    public Pedido(Sorvetes base){
         this.base = base;
         this.estadoAtual = new PedidoRecebido();
     }

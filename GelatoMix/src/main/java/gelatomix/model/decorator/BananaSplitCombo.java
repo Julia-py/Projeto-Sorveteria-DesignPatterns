@@ -1,9 +1,9 @@
 package gelatomix.model.decorator;
 
-import gelatomix.model.interfaces.Base;
+import gelatomix.model.interfaces.Sorvetes;
 
 public class BananaSplitCombo extends AdicionaDecoracao {
-    public BananaSplitCombo(Base base) {
+    public BananaSplitCombo(Sorvetes base) {
         super(new Chantilly(new CaldaChocolate(new Banana(base))));
     }
     @Override

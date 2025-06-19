@@ -1,9 +1,9 @@
 package gelatomix.model.decorator;
 
-import gelatomix.model.interfaces.Base;
+import gelatomix.model.interfaces.Sorvetes;
 
 public class Cookie extends AdicionaDecoracao {
-    public Cookie (Base base) {
+    public Cookie (Sorvetes base) {
         super(base);
     }
     public String getDescricao() {

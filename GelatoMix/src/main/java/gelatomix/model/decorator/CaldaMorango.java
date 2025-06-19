@@ -1,9 +1,9 @@
 package gelatomix.model.decorator;
 
-import gelatomix.model.interfaces.Base;
+import gelatomix.model.interfaces.Sorvetes;
 
 public class CaldaMorango extends AdicionaDecoracao {
-    public CaldaMorango (Base base) {
+    public CaldaMorango (Sorvetes base) {
         super(base);
     }
     public String getDescricao() {

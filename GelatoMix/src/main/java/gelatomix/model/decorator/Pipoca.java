@@ -1,9 +1,9 @@
 package gelatomix.model.decorator;
 
-import gelatomix.model.interfaces.Base;
+import gelatomix.model.interfaces.Sorvetes;
 
 public class Pipoca extends AdicionaDecoracao {
-    public Pipoca (Base base) {
+    public Pipoca (Sorvetes base) {
         super(base);
     }
     public String getDescricao() {

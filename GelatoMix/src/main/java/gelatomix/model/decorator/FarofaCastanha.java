@@ -1,9 +1,9 @@
 package gelatomix.model.decorator;
 
-import gelatomix.model.interfaces.Base;
+import gelatomix.model.interfaces.Sorvetes;
 
 public class FarofaCastanha extends AdicionaDecoracao {
-    public FarofaCastanha (Base base) {
+    public FarofaCastanha (Sorvetes base) {
         super(base);
     }
     public String getDescricao() {

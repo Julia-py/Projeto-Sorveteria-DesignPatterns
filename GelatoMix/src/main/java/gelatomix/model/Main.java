@@ -1,14 +1,9 @@
 package gelatomix.model;
 import gelatomix.model.decorator.*;
-import gelatomix.model.factory.Millkshake;
-import gelatomix.model.factory.Picole;
-import gelatomix.model.factory.Sorvete;
-import gelatomix.model.interfaces.Base;
+import gelatomix.model.factory.FactoryMilkshakeChocolate;
+import gelatomix.model.factory.FactoryPicoleChocolate;
+import gelatomix.model.interfaces.Sorvetes;
 import gelatomix.model.singleton.FiladePedidos;
-import gelatomix.model.state.PedidoEntregue;
-import gelatomix.model.state.PedidoPreparando;
-import gelatomix.model.state.PedidoPronto;
-import gelatomix.model.state.PedidoRecebido;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,16 +12,17 @@ public class Main {
         FiladePedidos fila = FiladePedidos.getInstancia();
 
         //decorator
-        Base base1 = new Sorvete();
+        Sorvetes base1 = new Sorvetes() {
+        };
         base1 = new CaldaChocolate(base1);
         base1 = new LeiteNinho(base1);
 
-        Base base2 = new Millkshake();
+        Sorvetes base2 = new FactoryMilkshakeChocolate();
         base2 = new Brownie(base2);
         base2 = new Nutella(base2);
         base2 = new Morango(base2);
 
-        Base base3 = new Picole();
+        Sorvetes base3 = new Picole();
         base3 = new CaldaCaramelo(base3);
         base3 = new Pipoca(base3);
 

@@ -1,11 +1,11 @@
 package gelatomix.model.decorator;
 /*faz parte de padrão decorator */
 
-import gelatomix.model.interfaces.Base;
+import gelatomix.model.interfaces.Sorvetes;
 
-public abstract class AdicionaDecoracao implements Base {
-    protected Base base;
-    public AdicionaDecoracao( Base base) {
+public abstract class AdicionaDecoracao implements Sorvetes {
+    protected Sorvetes base;
+    public AdicionaDecoracao( Sorvetes base) {
         this.base = base;
     }
 

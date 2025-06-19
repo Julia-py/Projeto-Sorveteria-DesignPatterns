@@ -1,9 +1,9 @@
 package gelatomix.model.decorator;
 
-import gelatomix.model.interfaces.Base;
+import gelatomix.model.interfaces.Sorvetes;
 
 public class Uva extends AdicionaDecoracao {
-    public Uva (Base base) {
+    public Uva (Sorvetes base) {
         super(base);
     }
     public String getDescricao() {
