@@ -8,7 +8,7 @@ public class MerengueDoceLeite extends AdicionaDecoracao {
     }
 
     public String getDescricao() {
-        return sorvete.getDescricao() + ", Merengue de Doce de Leite ";
+        return sorvete.getDescricao() + " com Merengue de Doce de Leite";
     }
 
     @Override

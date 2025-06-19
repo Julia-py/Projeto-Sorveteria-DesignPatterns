@@ -8,7 +8,7 @@ public class Pistache extends AdicionaDecoracao{
     }
 
     public String getDescricao() {
-        return sorvete.getDescricao() + ", creme de Pistache de Dubai ";
+        return sorvete.getDescricao() + " com creme de Pistache de Dubai";
     }
 
     @Override

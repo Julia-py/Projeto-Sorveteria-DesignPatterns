@@ -8,7 +8,7 @@ public class CaldaDoceDeLeite extends AdicionaDecoracao {
     }
 
     public String getDescricao() {
-        return sorvete.getDescricao() + ", Calda de Doce de Leite ";
+        return sorvete.getDescricao() + " com Calda de Doce de Leite";
     }
 
     @Override

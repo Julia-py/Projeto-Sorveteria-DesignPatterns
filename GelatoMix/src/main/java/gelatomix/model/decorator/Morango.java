@@ -8,7 +8,7 @@ public class Morango extends AdicionaDecoracao {
     }
 
     public String getDescricao() {
-        return sorvete.getDescricao() + ", Morango ";
+        return sorvete.getDescricao() + "com Morangos";
     }
 
     @Override

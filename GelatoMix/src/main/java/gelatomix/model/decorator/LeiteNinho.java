@@ -8,7 +8,7 @@ public class LeiteNinho extends AdicionaDecoracao {
     }
 
     public String getDescricao() {
-        return sorvete.getDescricao() + ", Creme de Leite Ninho ";
+        return sorvete.getDescricao() + " com Creme de Leite Ninho";
     }
 
     @Override

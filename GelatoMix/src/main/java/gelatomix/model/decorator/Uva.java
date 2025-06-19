@@ -8,7 +8,7 @@ public class Uva extends AdicionaDecoracao {
     }
 
     public String getDescricao() {
-        return sorvete.getDescricao() + ",Uva ";
+        return sorvete.getDescricao() + " com Uvas";
     }
 
     @Override

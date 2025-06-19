@@ -7,7 +7,7 @@ public class Banana extends AdicionaDecoracao {
         super(sorvete);
     }
     public String getDescricao() {
-      return sorvete.getDescricao() + " Banana,";
+      return sorvete.getDescricao() + " com banana";
     }
 
     @Override

@@ -8,7 +8,7 @@ public class Suspiro extends AdicionaDecoracao {
     }
 
     public String getDescricao() {
-        return sorvete.getDescricao() + ", Suspiros Artesanais ";
+        return sorvete.getDescricao() + " com Suspiros Artesanais";
     }
 
     @Override

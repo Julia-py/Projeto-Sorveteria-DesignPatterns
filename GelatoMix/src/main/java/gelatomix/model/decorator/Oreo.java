@@ -8,7 +8,7 @@ public class Oreo extends AdicionaDecoracao {
     }
 
     public String getDescricao() {
-        return sorvete.getDescricao() + ", Oreo Triturado ";
+        return sorvete.getDescricao() + " com Oreo Triturado";
     }
 
     @Override

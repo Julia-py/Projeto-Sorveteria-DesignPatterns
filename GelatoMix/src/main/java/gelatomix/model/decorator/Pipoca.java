@@ -8,7 +8,7 @@ public class Pipoca extends AdicionaDecoracao {
     }
 
     public String getDescricao() {
-        return sorvete.getDescricao() + ", Pipoca Gourmet Tritrurada ";
+        return sorvete.getDescricao() + " com Pipoca Gourmet Tritrurada";
     }
 
     @Override

@@ -8,7 +8,7 @@ public class Cereja extends AdicionaDecoracao {
     }
 
     public String getDescricao() {
-        return sorvete.getDescricao() + ", Cereja ";
+        return sorvete.getDescricao() + " com Cereja";
     }
 
     @Override

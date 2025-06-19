@@ -8,7 +8,7 @@ public class Brownie extends AdicionaDecoracao {
     }
 
     public String getDescricao() {
-        return sorvete.getDescricao() + ", Pedaços de Brownie ";
+        return sorvete.getDescricao() + " com Pedaços de Brownie";
     }
 
     @Override

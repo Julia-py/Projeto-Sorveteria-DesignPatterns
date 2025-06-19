@@ -5,8 +5,6 @@ import gelatomix.model.facade.GelatomixFacade;
 import gelatomix.model.factory.FactoryMassaMorango;
 import gelatomix.model.factory.FactoryMilkshakeChocolate;
 
-
-
 public class Main {
     public static void main(String[] args) {
     

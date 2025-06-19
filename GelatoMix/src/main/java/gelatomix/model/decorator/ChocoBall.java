@@ -8,7 +8,7 @@ public class ChocoBall extends AdicionaDecoracao {
     }
 
     public String getDescricao() {
-        return sorvete.getDescricao() + ", ChocoBall ";
+        return sorvete.getDescricao() + " com ChocoBall";
     }
 
     @Override
