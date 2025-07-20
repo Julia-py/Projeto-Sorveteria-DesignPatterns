@@ -25,6 +25,14 @@ public class FiladePedidos {
         System.out.println("Pedido adicionado: " + pedido.getDescricao());
     }
 
+    public void removerPedido (Pedido pedido) {
+        if (fila.remove(pedido)) {
+            System.out.println("Pedido removido: " + pedido.getDescricao());
+        } else {
+            System.out.println("Pedido não encontrado na fila.");
+        }
+    }
+
     public int tamanhoFila () {
         return fila.size();
     }

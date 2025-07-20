@@ -2,6 +2,10 @@ package gelatomix.model.state;
 import gelatomix.model.interfaces.Sorvetes;
 import gelatomix.model.interfaces.EstadoPedido;
 
+/* ==== INÍCIO DAS IMPORTAÇÕES ADICIONADAS ==== */
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pedido {
     private Sorvetes base;
     private EstadoPedido estadoAtual;
@@ -10,26 +14,26 @@ public class Pedido {
     private double preco;
     private String dataCriacao;
 
-    public Pedido(Sorvetes base){
-        this.base = base;
-        this.estadoAtual = new PedidoRecebido();
-    }
-
-    // Gente criei esse construtor e o metódos para os pedidos vindos do banco de dados
+    // Gente criei esse construtor e os metódos para os pedidos vindos do banco de dados
     public Pedido(String descricao, double preco, String dataCriacao) {
         this.descricao = descricao;
         this.preco = preco;
         this.dataCriacao = dataCriacao;
     }
 
+    public Pedido(Sorvetes base){
+        this.base = base;
+        this.estadoAtual = new PedidoRecebido();
+    }
+
     public String getDescricaoSimples() {
         return descricao;
     }
-    
+
     public double getPrecoSimples() {
         return preco;
     }
-    
+
     public String getDataCriacao() {
         return dataCriacao;
     }
@@ -42,9 +46,12 @@ public class Pedido {
     public String getDescricao() {
         return "- Pedido do Cliente: " + base.getDescricao() + " | Preço: R$" + base.getPreco();
     }
-    
+
     public void proximoEstado() {
         estadoAtual.proximoEstado(this);
+        /* ==== INÍCIO MOD OBSERVER ==== */
+        notificarObservadores();
+        /* ==== FIM MOD OBSERVER ==== */
     }
 
     public String getEstado() {
@@ -55,5 +62,48 @@ public class Pedido {
         this.estadoAtual = estado;
     }
 
+    public EstadoPedido getEstadoAtual() {
+        return estadoAtual;
+    }
 
+    /* ==== INÍCIO MOD STRATEGY ==== */
+    private DescontoStrategy descontoStrategy;
+
+    public void setDescontoStrategy(DescontoStrategy strategy) {
+        this.descontoStrategy = strategy;
+    }
+
+    public double calcularPrecoComDesconto() {
+        double precoBase = base.getPreco();
+        if (descontoStrategy != null) {
+            return precoBase - descontoStrategy.aplicarDesconto(precoBase);
+        }
+        return precoBase;
+    }
+    /* ==== FIM MOD STRATEGY ==== */
+
+    /* ==== INÍCIO MOD OBSERVER ==== */
+    private List<ObservadorPedido> observadores = new ArrayList<>();
+
+    public void adicionarObservador(ObservadorPedido obs) {
+        observadores.add(obs);
+    }
+
+    public void removerObservador(ObservadorPedido obs) {
+        observadores.remove(obs);
+    }
+
+    public void notificarObservadores() {
+        String status = estadoAtual.getNomeEstado();
+        for (ObservadorPedido obs : observadores) {
+            obs.atualizar(status);
+        }
+    }
+    /* ==== FIM MOD OBSERVER ==== */
+
+    /* ==== INÍCIO SETTER ADICIONAL PARA COMMAND ==== */
+    public void setSorvete(Sorvetes sorvete) {
+        this.base = sorvete;
+    }
+    /* ==== FIM SETTER ADICIONAL PARA COMMAND ==== */
 }
