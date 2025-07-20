@@ -1,8 +1,9 @@
 package gelatomix.model.state;
 import gelatomix.model.interfaces.Sorvetes;
+import gelatomix.model.interfaces.DescontoStrategy;
 import gelatomix.model.interfaces.EstadoPedido;
+import gelatomix.model.interfaces.ObservadorPedido;
 
-/* ==== INÍCIO DAS IMPORTAÇÕES ADICIONADAS ==== */
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,9 +50,7 @@ public class Pedido {
 
     public void proximoEstado() {
         estadoAtual.proximoEstado(this);
-        /* ==== INÍCIO MOD OBSERVER ==== */
         notificarObservadores();
-        /* ==== FIM MOD OBSERVER ==== */
     }
 
     public String getEstado() {
@@ -66,7 +65,6 @@ public class Pedido {
         return estadoAtual;
     }
 
-    /* ==== INÍCIO MOD STRATEGY ==== */
     private DescontoStrategy descontoStrategy;
 
     public void setDescontoStrategy(DescontoStrategy strategy) {
@@ -80,9 +78,7 @@ public class Pedido {
         }
         return precoBase;
     }
-    /* ==== FIM MOD STRATEGY ==== */
 
-    /* ==== INÍCIO MOD OBSERVER ==== */
     private List<ObservadorPedido> observadores = new ArrayList<>();
 
     public void adicionarObservador(ObservadorPedido obs) {
@@ -99,11 +95,7 @@ public class Pedido {
             obs.atualizar(status);
         }
     }
-    /* ==== FIM MOD OBSERVER ==== */
-
-    /* ==== INÍCIO SETTER ADICIONAL PARA COMMAND ==== */
     public void setSorvete(Sorvetes sorvete) {
         this.base = sorvete;
     }
-    /* ==== FIM SETTER ADICIONAL PARA COMMAND ==== */
 }

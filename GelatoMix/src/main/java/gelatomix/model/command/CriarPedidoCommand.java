@@ -26,7 +26,7 @@ public class CriarPedidoCommand implements PedidoCommand {
     @Override
     public void desfazer() {
     //ver oq fazer para remover da fila de pedidos
-        pedido.setSorvete(null); // remover o sorvete do pedido
+        pedido.setSorvete(null); 
         System.out.println("Pedido cancelado");
     }
 }

@@ -14,6 +14,7 @@ public class GelatomixFacade {
     private PedidoRepository pedidoRepository = new PedidoRepository();
 
     public Pedido fazerPedido(ISorveteFactory factory) {
+        //colocar isso aqui no command:
         //pedidoRepository.limparPedidos();
         Sorvetes sorvete = FactoryBuilder.criarSorvete(factory);
 
