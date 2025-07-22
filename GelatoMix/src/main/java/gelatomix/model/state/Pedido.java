@@ -20,11 +20,21 @@ public class Pedido {
     }
 
     public void proximoEstado() {
-        estadoAtual.proximoEstado(this);
+        
+        if (sorvete != null && estadoAtual != null) {
+            estadoAtual.proximoEstado(this);
+        } else {
+            System.out.println("Não é possível avançar o estado do pedido no momento.");
+            
+        }
     }
 
     public void setEstadoAtual(EstadoPedido estado) {
         this.estadoAtual = estado;
+    }
+
+    public EstadoPedido getEstadoAtual() {
+        return estadoAtual;
     }
 
     public String getEstado() {
@@ -42,5 +52,13 @@ public class Pedido {
 
     public LocalDateTime getDataCriacao() {
         return dataCriacao;
+    }
+
+    public Sorvetes getSorvete() {
+        return sorvete;
+    }
+
+    public void setSorvete(Sorvetes sorvete) {
+        this.sorvete = sorvete;
     }
 }
