@@ -1,4 +1,5 @@
 package gelatomix.model.state;
+
 import gelatomix.model.interfaces.EstadoPedido;
 
 public class PedidoEntregue implements EstadoPedido {

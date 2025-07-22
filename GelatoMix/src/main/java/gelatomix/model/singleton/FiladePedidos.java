@@ -1,13 +1,15 @@
 package gelatomix.model.singleton;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
 import gelatomix.model.state.Pedido;
+import gelatomix.model.observer.PedidoObserver;
 
 public class FiladePedidos {
     private static FiladePedidos instancia;
-
     private Queue<Pedido> fila;
+    private PedidoObserver observer = new PedidoObserver();
 
     private FiladePedidos () {
         fila = new LinkedList<>();
@@ -22,14 +24,15 @@ public class FiladePedidos {
 
     public void adicionarPedido (Pedido pedido) {
         fila.add(pedido);
-        System.out.println("Pedido adicionado: " + pedido.getDescricao());
+        observer.notificarClientes("Pedido adicionado: " + pedido.getDescricao());
     }
 
     public void removerPedido (Pedido pedido) {
-        if (fila.remove(pedido)) {
-            System.out.println("Pedido removido: " + pedido.getDescricao());
+        boolean removido = fila.remove(pedido);
+        if (removido) {
+            observer.notificarClientes("Pedido cancelado: " + pedido.getDescricao());
         } else {
-            System.out.println("Pedido não encontrado na fila.");
+            observer.notificarClientes("Pedido não encontrado na fila.");
         }
     }
 
@@ -37,22 +40,24 @@ public class FiladePedidos {
         return fila.size();
     }
 
-    public Pedido proximoPedido (){
-       if (!fila.isEmpty()){
-        return fila.poll();
-       } else {
-           System.out.println("Fila de pedidos está vazia");
-           return null;
-       }
+    public Pedido proximoPedido () {
+        if (!fila.isEmpty()){
+            return fila.poll();
+        } else {
+            observer.notificarClientes("Fila de pedidos está vazia");
+            return null;
+        }
     }
 
     public void listarPedidos() {
         if (fila.isEmpty()) {
-            System.out.println("Nenhum pedido na fila.");
+            observer.notificarClientes("Nenhum pedido na fila.");
         } else {
-            System.out.println("Pedidos na fila:");
+            StringBuilder sb = new StringBuilder("Pedidos na fila:\n");
             for (Pedido p : fila) {
-                System.out.println("  " + p.getDescricao());}
+                sb.append(" - ").append(p.getDescricao()).append("\n");
+            }
+            observer.notificarClientes(sb.toString());
         }
     }
 }

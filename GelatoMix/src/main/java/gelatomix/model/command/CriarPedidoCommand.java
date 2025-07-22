@@ -4,6 +4,7 @@ import gelatomix.model.facade.GelatomixFacade;
 import gelatomix.model.interfaces.ISorveteFactory;
 import gelatomix.model.interfaces.PedidoCommand;
 import gelatomix.model.state.Pedido;
+import gelatomix.model.state.PedidoRecebido;
 
 public class CriarPedidoCommand implements PedidoCommand {
     private Pedido pedido;
@@ -25,8 +26,12 @@ public class CriarPedidoCommand implements PedidoCommand {
 
     @Override
     public void desfazer() {
-    //ver oq fazer para remover da fila de pedidos
-        pedido.setSorvete(null); 
-        System.out.println("Pedido cancelado");
+        if (pedido.getSorvete() == null) {
+            System.out.println("Nenhum sorvete associado ao pedido para desfazer.");
+            return;
+        }
+        pedido.setSorvete(null);
+        pedido.setEstadoAtual(new PedidoRecebido()); // Reseta o estado para "Pedido Recebido"
+        System.out.println("Pedido desfeito: " + pedido.getDescricao());
     }
 }

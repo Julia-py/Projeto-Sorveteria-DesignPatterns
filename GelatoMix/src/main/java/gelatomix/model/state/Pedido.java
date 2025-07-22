@@ -1,101 +1,46 @@
 package gelatomix.model.state;
-import gelatomix.model.interfaces.Sorvetes;
-import gelatomix.model.interfaces.DescontoStrategy;
-import gelatomix.model.interfaces.EstadoPedido;
-import gelatomix.model.interfaces.ObservadorPedido;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDateTime;
+
+import gelatomix.model.interfaces.EstadoPedido;
+import gelatomix.model.interfaces.Sorvetes;
 
 public class Pedido {
-    private Sorvetes base;
     private EstadoPedido estadoAtual;
+    private Sorvetes sorvete;
+    private LocalDateTime dataCriacao;
 
-    private String descricao;
-    private double preco;
-    private String dataCriacao;
+    // Removido campo cliente daqui, o cliente está registrado no observer
+    // private Cliente cliente;
 
-    // Gente criei esse construtor e os metódos para os pedidos vindos do banco de dados
-    public Pedido(String descricao, double preco, String dataCriacao) {
-        this.descricao = descricao;
-        this.preco = preco;
-        this.dataCriacao = dataCriacao;
-    }
-
-    public Pedido(Sorvetes base){
-        this.base = base;
+    public Pedido(Sorvetes sorvete) {
+        this.sorvete = sorvete;
         this.estadoAtual = new PedidoRecebido();
-    }
-
-    public String getDescricaoSimples() {
-        return descricao;
-    }
-
-    public double getPrecoSimples() {
-        return preco;
-    }
-
-    public String getDataCriacao() {
-        return dataCriacao;
-    }
-
-    //Júlia não mexi em nada da sua parte, não se preocupe
-    public Sorvetes getSorvete() {
-        return base;
-    }    
-
-    public String getDescricao() {
-        return "- Pedido do Cliente: " + base.getDescricao() + " | Preço: R$" + base.getPreco();
+        this.dataCriacao = LocalDateTime.now();
     }
 
     public void proximoEstado() {
         estadoAtual.proximoEstado(this);
-        notificarObservadores();
-    }
-
-    public String getEstado() {
-        return estadoAtual.getNomeEstado();
     }
 
     public void setEstadoAtual(EstadoPedido estado) {
         this.estadoAtual = estado;
     }
 
-    public EstadoPedido getEstadoAtual() {
-        return estadoAtual;
+    public String getEstado() {
+        return estadoAtual.getNomeEstado();
     }
 
-    private DescontoStrategy descontoStrategy;
-
-    public void setDescontoStrategy(DescontoStrategy strategy) {
-        this.descontoStrategy = strategy;
+    public String getDescricao() {
+        return sorvete.getDescricao();
     }
 
-    public double calcularPrecoComDesconto() {
-        double precoBase = base.getPreco();
-        if (descontoStrategy != null) {
-            return precoBase - descontoStrategy.aplicarDesconto(precoBase);
-        }
-        return precoBase;
+
+    public double getPrecoSimples() {
+        return sorvete.getPreco();
     }
 
-    private List<ObservadorPedido> observadores = new ArrayList<>();
-
-    public void adicionarObservador(ObservadorPedido obs) {
-        observadores.add(obs);
-    }
-
-    public void removerObservador(ObservadorPedido obs) {
-        observadores.remove(obs);
-    }
-
-    public void notificarObservadores() {
-        String status = estadoAtual.getNomeEstado();
-        for (ObservadorPedido obs : observadores) {
-            obs.atualizar(status);
-        }
-    }
-    public void setSorvete(Sorvetes sorvete) {
-        this.base = sorvete;
+    public LocalDateTime getDataCriacao() {
+        return dataCriacao;
     }
 }
