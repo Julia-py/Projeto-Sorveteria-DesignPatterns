@@ -1,7 +1,6 @@
 package gelatomix.model.state;
 
 import gelatomix.model.interfaces.EstadoPedido;
-import gelatomix.model.observer.Cliente;
 import gelatomix.model.observer.PedidoObserver;
 
 
@@ -17,9 +16,5 @@ public class PedidoRecebido implements EstadoPedido {
     @Override
     public String getNomeEstado() {
         return "Pedido Recebido";
-    }
-
-    public void adicionarClienteObserver(Cliente cliente) {
-        observer.adicionarCliente(cliente);
     }
 }

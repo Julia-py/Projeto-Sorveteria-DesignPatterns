@@ -1,22 +1,28 @@
 package gelatomix.model.state;
-
-import java.time.LocalDateTime;
-
 import gelatomix.model.interfaces.EstadoPedido;
 import gelatomix.model.interfaces.Sorvetes;
+import gelatomix.model.observer.Cliente;
 
 public class Pedido {
     private EstadoPedido estadoAtual;
     private Sorvetes sorvete;
-    private LocalDateTime dataCriacao;
+    private String descricao;
+    private double preco;
+    private String dataCriacao; 
 
-    // Removido campo cliente daqui, o cliente está registrado no observer
-    // private Cliente cliente;
+    private Cliente cliente;
 
+    //tenho que colocar cliente por aqui!!!!!
     public Pedido(Sorvetes sorvete) {
         this.sorvete = sorvete;
         this.estadoAtual = new PedidoRecebido();
-        this.dataCriacao = LocalDateTime.now();
+    }
+
+     // Gente criei esse construtor e o metódos para os pedidos vindos do banco de dados
+    public Pedido(String descricao, double preco, String dataCriacao) {
+        this.descricao = descricao;
+        this.preco = preco;
+        this.dataCriacao = dataCriacao;
     }
 
     public void proximoEstado() {
@@ -45,12 +51,20 @@ public class Pedido {
         return sorvete.getDescricao();
     }
 
+    public double getPreco() {
+        return preco;
+    }
+
+    public String getDescricaoSimples(){
+        return descricao;
+    }
+
 
     public double getPrecoSimples() {
         return sorvete.getPreco();
     }
 
-    public LocalDateTime getDataCriacao() {
+    public String getDataCriacao() {
         return dataCriacao;
     }
 
@@ -60,5 +74,9 @@ public class Pedido {
 
     public void setSorvete(Sorvetes sorvete) {
         this.sorvete = sorvete;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
     }
 }

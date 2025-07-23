@@ -30,11 +30,11 @@ public class GelatomixFacade {
 
     public void mostrarHistorico() {
         List<Pedido> pedidos = pedidoRepository.listarPedidos();
-        // System.out.println("\n HISTÓRICO DE PEDIDOS:"); // movido para observer
+        System.out.println("\n HISTÓRICO DE PEDIDOS:"); 
         for (Pedido pedido : pedidos) {
-            // System.out.println("Pedido: " + pedido.getDescricaoSimples()
-            //                  + " | Preço: R$" + pedido.getPrecoSimples()
-            //                  + " | Data: " + pedido.getDataCriacao());
+            System.out.println("Pedido: " + pedido.getDescricao()
+                             + " | Preço: R$" + pedido.getPrecoSimples()
+                             + " | Data: " + pedido.getDataCriacao());
         }
     }
 
