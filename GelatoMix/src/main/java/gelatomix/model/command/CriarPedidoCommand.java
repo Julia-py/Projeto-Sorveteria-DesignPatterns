@@ -1,27 +1,30 @@
 package gelatomix.model.command;
 
 import gelatomix.model.facade.GelatomixFacade;
+import gelatomix.model.factory.FactoryBuilder;
 import gelatomix.model.interfaces.ISorveteFactory;
 import gelatomix.model.interfaces.PedidoCommand;
+import gelatomix.model.interfaces.Sorvetes;
+import gelatomix.model.singleton.FiladePedidos;
 import gelatomix.model.state.Pedido;
 import gelatomix.model.state.PedidoRecebido;
+import gelatomix.repository.PedidoRepository;
 
 public class CriarPedidoCommand implements PedidoCommand {
     private Pedido pedido;
     private ISorveteFactory factory;
-    private GelatomixFacade facade;
-
-    public CriarPedidoCommand(Pedido pedido, ISorveteFactory factory, GelatomixFacade facade) {
-        this.pedido = pedido;
+    private PedidoRepository pedidoRepository;
+    public CriarPedidoCommand(ISorveteFactory factory) {
         this.factory = factory;
-        this.facade = facade;
     }
 
     @Override
     public void executar() {
-        Pedido pedidoCriado = facade.fazerPedido(factory);
-        pedido.setEstadoAtual(pedidoCriado.getEstadoAtual());
-        pedido.setSorvete(pedidoCriado.getSorvete());
+        Sorvetes sorvete = FactoryBuilder.criarSorvete(factory);
+        Pedido pedido = new Pedido(sorvete);
+        FiladePedidos fila = FiladePedidos.getInstancia();
+        fila.adicionarPedido(pedido);
+        pedidoRepository.salvarPedido(pedido);
     }
 
     @Override

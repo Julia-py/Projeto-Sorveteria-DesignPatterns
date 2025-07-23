@@ -11,25 +11,27 @@ import gelatomix.repository.ConexaoBD;
 public class Main {
     public static void main(String[] args) {
 
-        GelatomixFacade facade = new GelatomixFacade();
+        
 
-        Pedido pedido1 = facade.fazerPedido(new FactoryMassaMorango());
-        facade.statusPedido(pedido1);
-        facade.statusPedido(pedido1);
-        facade.statusPedido(pedido1);
+        // GelatomixFacade facade = new GelatomixFacade();
 
-        Pedido pedido2 = facade.fazerPedido(new FactoryMassaChocolate());
-        facade.statusPedido(pedido2);
+        // Pedido pedido1 = facade.fazerPedido(new FactoryMassaMorango());
+        // facade.MudarStatusPedido(pedido1);
+        // facade.MudarStatusPedido(pedido1);
+        // facade.MudarStatusPedido(pedido1);
 
-        facade.mostrarHistorico();
+        // Pedido pedido2 = facade.fazerPedido(new FactoryMassaChocolate());
+        // facade.MudarStatusPedido(pedido2);
 
-        //Testando conexão com o banco
-        try {
-            var conn = ConexaoBD.conectar();
-            System.out.println("Conexão realizada com sucesso!");
-            conn.close();
-        } catch(SQLException e) {
-            System.out.println("Erro na conexão: " + e.getMessage());
-        }
+        // facade.mostrarHistorico();
+
+        // //Testando conexão com o banco
+        // try {
+        //     var conn = ConexaoBD.conectar();
+        //     System.out.println("Conexão realizada com sucesso!");
+        //     conn.close();
+        // } catch(SQLException e) {
+        //     System.out.println("Erro na conexão: " + e.getMessage());
+        // }
     }
 }

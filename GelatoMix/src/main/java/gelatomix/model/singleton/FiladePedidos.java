@@ -27,6 +27,7 @@ public class FiladePedidos {
         observer.notificarClientes("Pedido adicionado: " + pedido.getDescricao());
     }
 
+    //relacionar isso aqui ao command
     public void removerPedido (Pedido pedido) {
         boolean removido = fila.remove(pedido);
         if (removido) {

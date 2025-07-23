@@ -16,4 +16,9 @@ public class PedidoPreparando implements EstadoPedido {
     public String getNomeEstado() {
         return "Preparando o Pedido";
     }
+
+    @Override
+    public String getNotificacaoEstado() {
+        return "[█████▒▒▒▒▒] 66% - Preparando pedido";
+    }
 }

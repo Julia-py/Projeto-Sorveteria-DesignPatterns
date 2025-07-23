@@ -5,14 +5,14 @@ import gelatomix.model.interfaces.PedidoCommand;
 import java.util.Stack;
 
 public class CommandInvoker {
-    private Stack<PedidoCommand> historico = new Stack<>();
+    private static Stack<PedidoCommand> historico = new Stack<>();
 
-    public void executarComando(PedidoCommand comando) {
+    public static void executarComando(PedidoCommand comando) {
         comando.executar();
         historico.push(comando);
     }
 
-    public void desfazerUltimoComando() {
+    public static void desfazerUltimoComando() {
         if (!historico.isEmpty()) {
             PedidoCommand ultimoComando = historico.pop();
             ultimoComando.desfazer();
@@ -21,7 +21,7 @@ public class CommandInvoker {
         }
     }
 
-    public boolean temHistorico() {
+    public static boolean temHistorico() {
         return !historico.isEmpty();
     }
 }

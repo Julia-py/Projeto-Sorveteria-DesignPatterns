@@ -2,10 +2,9 @@ package gelatomix.model.facade;
 
 import java.util.List;
 
-import gelatomix.model.factory.FactoryBuilder;
+import gelatomix.model.command.CommandInvoker;
+import gelatomix.model.command.CriarPedidoCommand;
 import gelatomix.model.interfaces.ISorveteFactory;
-import gelatomix.model.interfaces.Sorvetes;
-import gelatomix.model.singleton.FiladePedidos;
 import gelatomix.model.state.Pedido;
 import gelatomix.repository.PedidoRepository;
 
@@ -13,19 +12,8 @@ public class GelatomixFacade {
 
     private PedidoRepository pedidoRepository = new PedidoRepository();
 
-    public Pedido fazerPedido(ISorveteFactory factory) {
-        //pedidoRepository.limparPedidos(); // mantido comentado conforme original
-
-        Sorvetes sorvete = FactoryBuilder.criarSorvete(factory);
-
-        Pedido pedido = new Pedido(sorvete);
-
-        FiladePedidos fila = FiladePedidos.getInstancia();
-        fila.adicionarPedido(pedido);
-
-        pedidoRepository.salvarPedido(pedido);
-
-        return pedido;
+    public void fazerPedido(ISorveteFactory factory) {
+        CommandInvoker.executarComando(new CriarPedidoCommand(factory));
     }
 
     public void mostrarHistorico() {
@@ -61,7 +49,7 @@ public class GelatomixFacade {
     //     }
     // }
 
-    public void statusPedido(Pedido pedido) {
+    public void MudarStatusPedido(Pedido pedido) {
         // System.out.println("\nAtualização do status do pedido:"); // movido para observer
         pedido.proximoEstado();
         // String novoStatus = pedido.getEstado();

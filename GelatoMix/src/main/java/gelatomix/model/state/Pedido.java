@@ -1,4 +1,5 @@
 package gelatomix.model.state;
+import gelatomix.model.interfaces.DescontoStrategy;
 import gelatomix.model.interfaces.EstadoPedido;
 import gelatomix.model.interfaces.Sorvetes;
 import gelatomix.model.observer.Cliente;
@@ -9,7 +10,7 @@ public class Pedido {
     private String descricao;
     private double preco;
     private String dataCriacao; 
-
+    private DescontoStrategy desconto;
     private Cliente cliente;
 
     //tenho que colocar cliente por aqui!!!!!
@@ -52,7 +53,7 @@ public class Pedido {
     }
 
     public double getPreco() {
-        return preco;
+        return preco + desconto.aplicarDesconto(preco);
     }
 
     public String getDescricaoSimples(){

@@ -17,4 +17,9 @@ public class PedidoRecebido implements EstadoPedido {
     public String getNomeEstado() {
         return "Pedido Recebido";
     }
+
+    @Override
+    public String getNotificacaoEstado() {
+        return "[██████████] 100% - Pedido pronto";
+    }
 }
