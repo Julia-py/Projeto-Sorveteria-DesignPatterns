@@ -11,8 +11,6 @@ import gelatomix.repository.ConexaoBD;
 public class Main {
     public static void main(String[] args) {
 
-        
-
         // GelatomixFacade facade = new GelatomixFacade();
 
         // Pedido pedido1 = facade.fazerPedido(new FactoryMassaMorango());
