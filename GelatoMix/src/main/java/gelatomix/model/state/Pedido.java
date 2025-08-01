@@ -56,14 +56,29 @@ public class Pedido {
         return preco + desconto.aplicarDesconto(preco);
     }
 
-    public String getDescricaoSimples(){
+    /*public String getDescricaoSimples(){
         return descricao;
+    }*/
+
+
+    public String getDescricaoBD() {
+        if (sorvete != null) {
+            return sorvete.getDescricao();
+        }
+        return descricao; // usar o campo salvo diretamente
+    }
+
+    public double getPrecoBD() {
+        if (sorvete != null) {
+            return sorvete.getPreco();
+        }
+        return preco; // usar o campo salvo diretamente
     }
 
 
-    public double getPrecoSimples() {
+    /*public double getPrecoSimples() {
         return sorvete.getPreco();
-    }
+    }*/
 
     public String getDataCriacao() {
         return dataCriacao;

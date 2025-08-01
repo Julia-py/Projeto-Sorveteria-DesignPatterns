@@ -4,7 +4,7 @@ import java.util.List;
 
 import gelatomix.model.command.CommandInvoker;
 import gelatomix.model.command.CriarPedidoCommand;
-import gelatomix.model.interfaces.ISorveteFactory;
+import gelatomix.model.interfaces.Sorvetes;
 import gelatomix.model.state.Pedido;
 import gelatomix.repository.PedidoRepository;
 
@@ -12,16 +12,16 @@ public class GelatomixFacade {
 
     private PedidoRepository pedidoRepository = new PedidoRepository();
 
-    public void fazerPedido(ISorveteFactory factory) {
-        CommandInvoker.executarComando(new CriarPedidoCommand(factory));
+    public void fazerPedido(Sorvetes sorvete) {
+        CommandInvoker.executarComando(new CriarPedidoCommand(sorvete));
     }
 
     public void mostrarHistorico() {
         List<Pedido> pedidos = pedidoRepository.listarPedidos();
-        System.out.println("\n HISTÓRICO DE PEDIDOS:"); 
+        System.out.println("\n HISTÓRICO DE PEDIDOS:");
         for (Pedido pedido : pedidos) {
-            System.out.println("Pedido: " + pedido.getDescricao()
-                             + " | Preço: R$" + pedido.getPrecoSimples()
+            System.out.println("Pedido: " + pedido.getDescricaoBD()
+                             + " | Preço: R$" + pedido.getPrecoBD()
                              + " | Data: " + pedido.getDataCriacao());
         }
     }
@@ -55,4 +55,5 @@ public class GelatomixFacade {
         // String novoStatus = pedido.getEstado();
         // exibirBarraProgresso(novoStatus);
     }
+
 }

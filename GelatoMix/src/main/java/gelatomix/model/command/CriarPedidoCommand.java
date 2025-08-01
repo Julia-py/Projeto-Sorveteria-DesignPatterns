@@ -13,18 +13,23 @@ import gelatomix.repository.PedidoRepository;
 public class CriarPedidoCommand implements PedidoCommand {
     private Pedido pedido;
     private ISorveteFactory factory;
+    private Sorvetes sorvete;
     private PedidoRepository pedidoRepository;
-    public CriarPedidoCommand(ISorveteFactory factory) {
-        this.factory = factory;
+
+    public CriarPedidoCommand(Sorvetes sorvete) {
+        //this.factory = factory;
+        this.sorvete = sorvete;
+        this.pedidoRepository = new PedidoRepository();
     }
 
     @Override
     public void executar() {
-        Sorvetes sorvete = FactoryBuilder.criarSorvete(factory);
+        //Sorvetes sorvete = FactoryBuilder.criarSorvete(factory);
         Pedido pedido = new Pedido(sorvete);
         FiladePedidos fila = FiladePedidos.getInstancia();
         fila.adicionarPedido(pedido);
         pedidoRepository.salvarPedido(pedido);
+        pedidoRepository.listarPedidos();
     }
 
     @Override
