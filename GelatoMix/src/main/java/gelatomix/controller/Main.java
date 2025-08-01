@@ -105,10 +105,11 @@ public class Main {
             System.out.println("19 - Oreo");
             System.out.println("20 - Ovomaltine");
             System.out.println("21 - Paçoca");
-            System.out.println("22 - Pistache");
-            System.out.println("23 - Suspiro");
-            System.out.println("24 - Uva");
-            System.out.println("4 - Finalizar complementos");
+            System.out.println("22 - Pipoca");
+            System.out.println("23 - Pistache");
+            System.out.println("24 - Suspiro");
+            System.out.println("25 - Uva");
+            System.out.println("26 - Finalizar complementos");
             System.out.print("Opção: ");
             int comp = scanner.nextInt();
             scanner.nextLine();
