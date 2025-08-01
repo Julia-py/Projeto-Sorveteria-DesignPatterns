@@ -19,7 +19,7 @@ public class Main {
             System.out.println("\n🍦 Bem-vindo à Gelatomix!");
             System.out.println("1 - Fazer novo pedido");
             System.out.println("2 - Mostrar histórico de pedidos");
-            System.out.println("3 - Sair");
+            System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
             scanner.nextLine();
@@ -45,7 +45,7 @@ public class Main {
                     facade.mostrarHistorico();
                 }
 
-                case 3 -> System.out.println("👋 Saindo...");
+                case 0 -> System.out.println("👋 Saindo...");
                 default -> System.out.println("❌ Opção inválida.");
             }
 
@@ -109,7 +109,7 @@ public class Main {
             System.out.println("23 - Pistache");
             System.out.println("24 - Suspiro");
             System.out.println("25 - Uva");
-            System.out.println("26 - Finalizar complementos");
+            System.out.println("0 - Finalizar complementos");
             System.out.print("Opção: ");
             int comp = scanner.nextInt();
             scanner.nextLine();
@@ -140,7 +140,7 @@ public class Main {
                 case 23 -> base = new Pistache(base);
                 case 24 -> base = new Suspiro(base);
                 case 25 -> base = new Uva(base);
-                case 26 -> continuar = false;
+                case 0 -> continuar = false;
                 default -> System.out.println("❌ Opção inválida.");
             }
         }

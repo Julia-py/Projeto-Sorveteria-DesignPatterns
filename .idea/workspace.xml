@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="94643037-1555-47ef-acca-d5f3d969b77e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d5c37f9e-89c4-4fb7-9233-fa68b503ec67" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/GelatoMix/src/main/java/gelatomix/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GelatoMix/src/main/java/gelatomix/controller/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GelatoMix/src/main/java/gelatomix/model/command/CriarPedidoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/GelatoMix/src/main/java/gelatomix/model/command/CriarPedidoCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GelatoMix/src/main/java/gelatomix/model/facade/GelatomixFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/GelatoMix/src/main/java/gelatomix/model/facade/GelatomixFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GelatoMix/src/main/java/gelatomix/model/interfaces/Sorvetes.java" beforeDir="false" afterPath="$PROJECT_DIR$/GelatoMix/src/main/java/gelatomix/model/interfaces/Sorvetes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GelatoMix/src/main/java/gelatomix/model/state/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/GelatoMix/src/main/java/gelatomix/model/state/Pedido.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,30 +20,26 @@
 }]]></component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "git@github.com:Julia-py/Projeto-Sorveteria-DesignPatterns.git",
+    "url": "https://github.com/Julia-py/Projeto-Sorveteria-DesignPatterns.git",
     "accountId": "e3a56519-9c62-4604-894e-fe9422304db5"
   }
 }]]></component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 6
-}</component>
-  <component name="ProjectId" id="30dg1PWtDeIrNo0blstpysl7qBF" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="30gacBfK8zwgQbNr6nYUsj55GBE" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "dev",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/rose/Área de Trabalho/Projetos",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -78,11 +66,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="94643037-1555-47ef-acca-d5f3d969b77e" name="Changes" comment="" />
-      <created>1753962648491</created>
+      <changelist id="d5c37f9e-89c4-4fb7-9233-fa68b503ec67" name="Changes" comment="" />
+      <created>1754051748795</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1753962648491</updated>
+      <updated>1754051748795</updated>
     </task>
     <servers />
   </component>
