@@ -1,8 +1,11 @@
 package gelatomix.model.facade;
 
+import gelatomix.model.decorator.CaldaChocolate;
 import gelatomix.model.factory.FactoryBuilder;
 import gelatomix.model.interfaces.ISorveteFactory;
 import gelatomix.model.interfaces.Sorvetes;
+
+
 
 public class GelatomixFacade {
 
@@ -13,5 +16,12 @@ public class GelatomixFacade {
         System.out.println(sorvete.getPreco());
         
         return sorvete;
+
+        }
+
+
     }
-}
+
+
+
+
