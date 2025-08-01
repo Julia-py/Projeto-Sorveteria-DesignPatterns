@@ -75,7 +75,6 @@ public class Pedido {
         return preco; // usar o campo salvo diretamente
     }
 
-
     /*public double getPrecoSimples() {
         return sorvete.getPreco();
     }*/
